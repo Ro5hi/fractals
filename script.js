@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     // Canvas Settings
         ctx.fillStyle = 'green';
         ctx.strokeStyle = 'yellow';
-        ctx.lineWidth = 30;
+        ctx.lineWidth = 10;
         ctx.lineCap = 'round';
 
 
@@ -15,7 +15,8 @@ window.addEventListener('load', function(){
         let size = 200;
         let sides = 5;
         let maxLevel = 1;
-        let spread = 0.5;
+        let scale = 1;
+        let spread = 0.8;
         let branches = 2;
         ctx.save();
         ctx.translate(canvas.width/2,canvas.height/2);
@@ -33,16 +34,16 @@ window.addEventListener('load', function(){
             
             for (let i = 0; i < branches; i++){
                 ctx.save();
-                ctx.translate(size/2,0);
+                ctx.translate(size - (size/branches )* i, 0);
                 ctx.rotate(spread);
-                ctx.scale(0.8,0.8);
+                ctx.scale(scale, scale);
                 drawBranch(level + 1);
                 ctx.restore();
     
                 ctx.save();
-                ctx.translate(size/2,0);
+                ctx.translate(size - (size/branches )* i, 0);
                 ctx.rotate(-spread);
-                ctx.scale(0.8,0.8);
+                ctx.scale(scale, scale);
                 drawBranch(level + 1);
                 ctx.restore();                
             }
