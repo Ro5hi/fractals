@@ -14,6 +14,7 @@ window.addEventListener('load', function(){
 
     // Control Settings
         const randomizeButton = document.getElementById('randomizeButton');
+        const resetButton = document.getElementById('resetButton');
         const slider_spread = document.getElementById('spread');
         const label_spread = document.querySelector('[for="spread"]');
         slider_spread.addEventListener('change', function(e){
@@ -91,25 +92,38 @@ window.addEventListener('load', function(){
     drawFractal();
 
     // Controls
-    function randomizeFractal() {
-        lineWidth = Math.floor(Math.random() * 20 + 10);
-        sides = Math.random() * 7 + 2;
-        scale = Math.random() * 0.2 + 0.4;
-        spread = Math.random() * 2.9 + 0.1;
-        color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
-    }
-    randomizeButton.addEventListener('click', function(){
-        randomizeFractal();
-        updateSliders();
-        drawFractal();
-    });
+        function randomizeFractal() {
+            lineWidth = Math.floor(Math.random() * 20 + 10);
+            sides = Math.random() * 7 + 2;
+            scale = Math.random() * 0.2 + 0.4;
+            spread = Math.random() * 2.9 + 0.1;
+            color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
+        }
+        randomizeButton.addEventListener('click', function(){
+            randomizeFractal();
+            updateSliders();
+            drawFractal();
+        });
 
-    function updateSliders(){
-        slider_spread.value = spread;
-        label_spread.innerText = 'Spread: ' + Number(spread).toFixed(1);
-        slider_sides.value = sides;
-        label_sides.innerText = 'Sides: ' + sides.toFixed(1);
-    }
-    updateSliders();
+        function resetFractal() {
+            lineWidth = 10;
+            sides = 5;
+            scale = 0.5;
+            spread = 0.7;
+            color = 'hsl(45, 100%, 50%)';
+        }
+        resetButton.addEventListener('click', function(){
+            resetFractal();
+            updateSliders();
+            drawFractal();
+        });
+
+        function updateSliders(){
+            slider_spread.value = spread;
+            label_spread.innerText = 'Spread: ' + Number(spread).toFixed(1);
+            slider_sides.value = sides;
+            label_sides.innerText = 'Sides: ' + sides.toFixed(1);
+        }
+        updateSliders();
 
   });
