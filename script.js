@@ -13,11 +13,11 @@ window.addEventListener('load', function(){
 
     // Effect Settings
         let size = 200;
-        let sides = 5;
+        let sides = 8;
         let maxLevel = 3;
-        let scale = 0.5;
-        let spread = 0.8;
-        let branches = 2;
+        let scale = 0.4;
+        let spread = 0.6;
+        let branches = 6;
 
     // Draw Branches
         function drawBranch(level){
