@@ -65,13 +65,13 @@ window.addEventListener('load', function(){
                 ctx.scale(scale, scale);
                 drawBranch(level + 1);
                 ctx.restore();
-    
+                
                 ctx.save();
                 ctx.translate(size - (size/branches )* i, 0);
                 ctx.rotate(-spread);
                 ctx.scale(scale, scale);
                 drawBranch(level + 1);
-                ctx.restore();                
+                ctx.restore(); 
             }
         }
         
@@ -122,7 +122,7 @@ window.addEventListener('load', function(){
             slider_spread.value = spread;
             label_spread.innerText = 'Spread: ' + Number(spread).toFixed(1);
             slider_sides.value = sides;
-            label_sides.innerText = 'Sides: ' + sides.toFixed(1);
+            label_sides.innerText = 'Sides: ' + Number(sides).toFixed(1);
         }
         updateSliders();
 
