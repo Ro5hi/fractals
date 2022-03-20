@@ -1,12 +1,12 @@
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth * 0.8;
-    canvas.height = window.innerHeight * 0.8;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     // Canvas Settings
-        ctx.fillStyle = 'green';
-        ctx.strokeStyle = 'yellow';
+        ctx.fillStyle = 'darkslategrey';
+        ctx.strokeStyle = 'orange';
         ctx.lineWidth = 10;
         ctx.lineCap = 'round';
 
@@ -14,8 +14,8 @@ window.addEventListener('load', function(){
     // Effect Settings
         let size = 200;
         let sides = 5;
-        let maxLevel = 1;
-        let scale = 1;
+        let maxLevel = 3;
+        let scale = 0.5;
         let spread = 0.8;
         let branches = 2;
         ctx.save();
