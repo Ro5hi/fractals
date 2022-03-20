@@ -14,6 +14,8 @@ window.addEventListener('load', function(){
     // Effect Settings
         let size = 200;
         let sides = 8;
+
+        // Max Level determines the dept of the fractal
         let maxLevel = 3;
         let scale = 0.4;
         let spread = 0.6;
@@ -48,8 +50,6 @@ window.addEventListener('load', function(){
         function drawFractal() {
             ctx.save();
             ctx.translate(canvas.width/2,canvas.height/2);
-            ctx.scale(1,1);
-            ctx.rotate(0);
             
             for (let i = 0; i < sides; i++){ 
                 ctx.rotate((Math.PI * 2) / sides);
