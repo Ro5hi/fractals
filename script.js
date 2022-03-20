@@ -33,22 +33,23 @@ window.addEventListener('load', function(){
 
     // Effect Settings
         // Determines size of the canvas based on device used
-        let size = canvas.width < canvas.height ? canvas.width * 0.3 : canvas.height * 0.3;
+        let size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
+        let lineWidth = Math.floor(Math.random() * 20 + 10);
         
         // Randomizes color of the fractal
         let color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
         // Scale Determines size of the segments
-        let scale = 0.4;
-        let lineWidth = Math.floor(Math.random() * 20 + 10);
+        let scale = 1;
         
-        let sides = 5;
+        // Determines nunber of parent branches
+        let sides = 10;
         // Spread determines angle or radians from the parent branch
-        let spread = 0.1;
+        let spread = -0.2;
 
         // Max Level determines the dept of the fractal
         const maxLevel = 3;
         // Branches determines number of branches created within the fractal
-        const branches = 5;
+        const branches = 1;
 
     // Draw Branches
         function drawBranch(level){
@@ -98,10 +99,10 @@ window.addEventListener('load', function(){
 
     // Controls
         function randomizeFractal() {
-            lineWidth = Math.floor(Math.random() * 20 + 10);
-            sides = Math.random() * 7 + 2;
-            scale = Math.random() * 0.4 + 0.4;
-            spread = Math.random() * 2.9 + 0.1;
+            lineWidth = Math.floor(Math.random() * 30 + 20);
+            sides = Math.random() * 18 + 2;
+            scale = Math.random() * 1 + 0.1;
+            spread = Math.random() * 0.6 + 0.3;
             color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
         }
         randomizeButton.addEventListener('click', function(){
@@ -111,10 +112,10 @@ window.addEventListener('load', function(){
         });
 
         function resetFractal() {
-            lineWidth = 10;
-            sides = 5;
-            scale = 0.5;
-            spread = 0.7;
+            lineWidth = 30;
+            sides = 15;
+            scale = 0.85;
+            spread = 0.2;
             color = 'hsl(45, 100%, 50%)';
         }
         resetButton.addEventListener('click', function(){
@@ -134,7 +135,7 @@ window.addEventListener('load', function(){
         window.addEventListener('resize', function(){
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            size = canvas.width < canvas.height ? canvas.width * 0.3 : canvas.height * 0.3;
+            size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
             ctx.shadowColor = 'rgba(0,0,0,0.7)';
             ctx.shaddowOffsetX = 10;
             ctx.shaddowOffsetY = 5;
