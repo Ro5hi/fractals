@@ -6,7 +6,6 @@ window.addEventListener('load', function(){
 
     // Canvas Settings
         ctx.fillStyle = 'darkslategrey';
-        ctx.lineWidth = 10;
         ctx.lineCap = 'round';
         ctx.shadowColor = 'rgba(0,0,0,0.7)';
         ctx.shaddowOffsetX = 10;
@@ -20,12 +19,14 @@ window.addEventListener('load', function(){
     // Effect Settings
         // Determines size of the canvas based on device used
         let size = canvas.width < canvas.height ? canvas.width * 0.3 : canvas.height * 0.3;
-    
+        
         // Randomizes color of the fractal
         let color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
-        let sides = 5;
         // Scale Determines size of the segments
         let scale = 0.4;
+        let lineWidth = Math.floor(Math.random() * 20 + 10);
+        
+        let sides = 5;
         // Spread determines angle or radians from the parent branch
         let spread = 0.1;
 
@@ -62,6 +63,7 @@ window.addEventListener('load', function(){
         // Draw Fractal   
         function drawFractal() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = lineWidth;
             ctx.save();
             ctx.strokeStyle = color;
             ctx.translate(canvas.width/2,canvas.height/2);
@@ -76,6 +78,7 @@ window.addEventListener('load', function(){
 
     // Controls
     function randomizeFractal() {
+        lineWidth = Math.floor(Math.random() * 20 + 10);
         sides = Math.random() * 7 + 2;
         scale = Math.random() * 0.2 + 0.4;
         spread = Math.random() * 2.9 + 0.1;
