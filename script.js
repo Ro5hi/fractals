@@ -10,15 +10,19 @@ window.addEventListener('load', function(){
         ctx.lineWidth = 30;
         ctx.lineCap = 'round';
 
-        
-        // Effect Settings
-        let size = 200;
 
-        ctx.translate(100,100);
-        ctx.rotate(0.3);
+    // Effect Settings
+        let size = 200;
+        ctx.save();
+        ctx.translate(canvas.width/2,canvas.height/2);
+        ctx.scale(1,1);
+        ctx.rotate(0);
         ctx.fillRect(0,0,canvas.height, canvas.width);
+
+    // Set Start Point
         ctx.beginPath();
-        ctx.moveTo(canvas.width/2,canvas.height/2);
-        ctx.lineTo(size,canvas.height/2);
+        ctx.moveTo(0,0);
+        ctx.lineTo(size,0);
         ctx.stroke();
+        ctx.restore();
   })
