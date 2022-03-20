@@ -12,8 +12,15 @@ window.addEventListener('load', function(){
         ctx.shaddowOffsetY = 5;
         ctx.shadowBlur = 10;
 
-    // Control Fractal
+    // Control Settings
         const randomizeButton = document.getElementById('randomizeButton');
+        const slider_spread = document.getElementById('spread');
+        const label_spread = document.querySelector('[for="spread"]');
+        slider_spread.addEventListener('change', function(e){
+            console.log(e.target.value);
+            spread = e.target.value;
+            drawFractal();
+        })
 
 
     // Effect Settings

@@ -34,3 +34,9 @@
       color: whitesmoke;
       background: black;
   }
+
+  label, input {
+    padding: 5px;
+    color: whitesmoke;
+    font-size: 14px;
+  }
