@@ -15,6 +15,8 @@ window.addEventListener('load', function(){
         let size = 200;
         let sides = 5;
         let maxLevel = 1;
+        let spread = 0.5;
+        let branches = 2;
         ctx.save();
         ctx.translate(canvas.width/2,canvas.height/2);
         ctx.scale(1,1);
@@ -28,19 +30,28 @@ window.addEventListener('load', function(){
             ctx.moveTo(0,0);
             ctx.lineTo(size, 0);
             ctx.stroke();
-
-            ctx.save();
-            ctx.translate(size/2,0);
-            ctx.rotate(0.6);
-            ctx.scale(0.8,0.8);
-            drawBranch(level + 1);
-            ctx.restore();
+            
+            for (let i = 0; i < branches; i++){
+                ctx.save();
+                ctx.translate(size/2,0);
+                ctx.rotate(spread);
+                ctx.scale(0.8,0.8);
+                drawBranch(level + 1);
+                ctx.restore();
+    
+                ctx.save();
+                ctx.translate(size/2,0);
+                ctx.rotate(-spread);
+                ctx.scale(0.8,0.8);
+                drawBranch(level + 1);
+                ctx.restore();                
+            }
         }
         drawBranch(0);
 
-    // for (let i = 0; i < sides; i++){
-    //     // Rotate Sides 
-    //     ctx.rotate((Math.PI * 2) / sides);
-    // }
+    /* for (let i = 0; i < sides; i++){
+        // Rotate Sides 
+        ctx.rotate((Math.PI * 2) / sides);
+     } */
 
   })
