@@ -30,7 +30,7 @@ window.addEventListener('load', function(){
             drawFractal();
         })
 
-
+        
     // Effect Settings
         // Determines size of the canvas based on device used
         let size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
