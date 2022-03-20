@@ -14,6 +14,7 @@ window.addEventListener('load', function(){
     // Effect Settings
         let size = 200;
         let sides = 5;
+        let maxLevel = 1;
         ctx.save();
         ctx.translate(canvas.width/2,canvas.height/2);
         ctx.scale(1,1);
@@ -21,20 +22,25 @@ window.addEventListener('load', function(){
         ctx.fillRect(0,0,canvas.height, canvas.width);
 
     // Draw Branches
-        function drawBranch(){
+        function drawBranch(level){
+            if (level > maxLevel) return;
             ctx.beginPath();
             ctx.moveTo(0,0);
             ctx.lineTo(size, 0);
             ctx.stroke();
 
-            drawBranch();
+            ctx.save();
+            ctx.translate(size/2,0);
+            ctx.rotate(0.6);
+            ctx.scale(0.8,0.8);
+            drawBranch(level + 1);
+            ctx.restore();
         }
-        drawBranch();
+        drawBranch(0);
 
     // for (let i = 0; i < sides; i++){
     //     // Rotate Sides 
     //     ctx.rotate((Math.PI * 2) / sides);
     // }
 
-    ctx.restore();
   })
