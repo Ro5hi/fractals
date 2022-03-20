@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     // Canvas Settings
         ctx.fillStyle = 'darkslategrey';
         ctx.lineCap = 'round';
-        ctx.shadowColor = 'rgba(0,0,0,0.7)';
+        ctx.shadowColor = 'rgba(0,0,0,0.9)';
         ctx.shaddowOffsetX = 10;
         ctx.shaddowOffsetY = 5;
         ctx.shadowBlur = 10;
@@ -136,7 +136,7 @@ window.addEventListener('load', function(){
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
-            ctx.shadowColor = 'rgba(0,0,0,0.7)';
+            ctx.shadowColor = 'rgba(0,0,0,0.9)';
             ctx.shaddowOffsetX = 10;
             ctx.shaddowOffsetY = 5;
             ctx.shadowBlur = 10;
