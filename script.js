@@ -73,6 +73,10 @@ window.addEventListener('load', function(){
                 drawBranch(level + 1);
                 ctx.restore(); 
             }
+            // Add Circle Shape
+            ctx.beginPath();
+            ctx.arc(0,size,size * 0.1,0, Math.PI * 2);
+            ctx.fill();
         }
         
         // Draw Fractal   
@@ -80,6 +84,7 @@ window.addEventListener('load', function(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.lineWidth = lineWidth;
             ctx.save();
+            ctx.fillStyle = color;
             ctx.strokeStyle = color;
             ctx.translate(canvas.width/2,canvas.height/2);
             
@@ -95,7 +100,7 @@ window.addEventListener('load', function(){
         function randomizeFractal() {
             lineWidth = Math.floor(Math.random() * 20 + 10);
             sides = Math.random() * 7 + 2;
-            scale = Math.random() * 0.2 + 0.4;
+            scale = Math.random() * 0.4 + 0.4;
             spread = Math.random() * 2.9 + 0.1;
             color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
         }
