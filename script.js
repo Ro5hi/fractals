@@ -131,4 +131,16 @@ window.addEventListener('load', function(){
         }
         updateSliders();
 
+        window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            size = canvas.width < canvas.height ? canvas.width * 0.3 : canvas.height * 0.3;
+            ctx.shadowColor = 'rgba(0,0,0,0.7)';
+            ctx.shaddowOffsetX = 10;
+            ctx.shaddowOffsetY = 5;
+            ctx.shadowBlur = 10;
+            
+            drawFractal();
+        });
+
   });
