@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
 
     // Effect Settings
         let size = 200;
-        let sides = 3;
+        let sides = 5;
         ctx.save();
         ctx.translate(canvas.width/2,canvas.height/2);
         ctx.scale(1,1);
@@ -26,7 +26,7 @@ window.addEventListener('load', function(){
         ctx.moveTo(0,0);
         ctx.lineTo(size,0);
         ctx.stroke();
-        ctx.rotate(0.5);
+        ctx.rotate((Math.PI * 2) / sides);
     }
 
     ctx.restore();
