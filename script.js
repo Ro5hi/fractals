@@ -47,21 +47,27 @@ window.addEventListener('load', function(){
         let spread = -0.2;
 
         // Max Level determines the dept of the fractal
-        const maxLevel = 5;
+        const maxLevel = 3;
         // Branches determines number of branches created within the fractal
-        const branches = 2;
+        const branches = 1;
+
+
+    // Set Bezier Curve
+        let pointX = 0;
+        let pointY = size;
 
     // Draw Branches
         function drawBranch(level){
             if (level > maxLevel) return;
             ctx.beginPath();
-            ctx.moveTo(0,0);
+            ctx.moveTo(pointX, pointY);
+            ctx.bezierCurveTo(/* startpoint */ 0,size * spread * -3, /* x */ size * 5, /* y */ size * 5,size * 10, /* endpoint */0,0);
             ctx.lineTo(size, 0);
             ctx.stroke();
             
             for (let i = 0; i < branches; i++){
                 ctx.save();
-                ctx.translate(size - (size/branches )* i, 0);
+                ctx.translate(pointX, pointY);
                 ctx.rotate(spread);
                 ctx.scale(scale, scale);
                 drawBranch(level + 1);
@@ -76,7 +82,7 @@ window.addEventListener('load', function(){
             }
             // Add Circle Shape
             ctx.beginPath();
-            ctx.arc(0,size,size * 0.1,0, Math.PI * 2);
+            ctx.arc(-size/2,0,40,0, Math.PI * 2);
             ctx.fill();
         }
         
@@ -90,7 +96,8 @@ window.addEventListener('load', function(){
             ctx.translate(canvas.width/2,canvas.height/2);
             
             for (let i = 0; i < sides; i++){ 
-                ctx.rotate((Math.PI * 2) / sides);
+                ctx.rotate((Math.PI * 6) / sides);
+                ctx.scale(0.95,0.95);
                 drawBranch(0);
         }
         ctx.restore();
@@ -100,9 +107,8 @@ window.addEventListener('load', function(){
     // Controls
         // Randomize Settings
         function randomizeFractal() {
-            lineWidth = Math.floor(Math.random() * 30 + 20);
-            sides = Math.random() * 18 + 2;
-            scale = Math.random() * 1 + 0.1;
+            lineWidth = Math.floor(Math.random() * 30 + 10);
+            sides = Math.floor(Math.random() * 18 + 2);
             spread = Math.random() * 0.6 - 0.3;
             color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
         }
@@ -116,7 +122,7 @@ window.addEventListener('load', function(){
         function resetFractal() {
             lineWidth = 30;
             sides = 15;
-            scale = 0.85;
+            scale = 0.55;
             spread = 0.2;
             color = 'hsl(45, 100%, 50%)';
         }
@@ -137,7 +143,7 @@ window.addEventListener('load', function(){
         window.addEventListener('resize', function(){
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
+            size = canvas.width < canvas.height ? canvas.width * 0.04 : canvas.height * 0.04;
             ctx.shadowColor = 'rgba(0,0,0,0.9)';
             ctx.shaddowOffsetX = 10;
             ctx.shaddowOffsetY = 5;
