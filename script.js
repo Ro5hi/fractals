@@ -14,7 +14,7 @@ window.addEventListener('load', function(){
         ctx.shadowBlur = 10;
 
     // Control Fractal
-        const randomizeButton = document.getElementById('randomizeBUtton');
+        const randomizeButton = document.getElementById('randomizeButton');
 
 
     // Effect Settings
@@ -61,6 +61,7 @@ window.addEventListener('load', function(){
         
         // Draw Fractal   
         function drawFractal() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.save();
             ctx.strokeStyle = color;
             ctx.translate(canvas.width/2,canvas.height/2);
@@ -73,6 +74,7 @@ window.addEventListener('load', function(){
     }
     drawFractal();
 
+    // Controls
     function randomizeFractal() {
         sides = Math.random() * 7 + 2;
         scale = Math.random() * 0.2 + 0.4;
