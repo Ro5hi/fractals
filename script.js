@@ -16,7 +16,7 @@ window.addEventListener('load', function(){
 
     // Effect Settings
         let color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
-        let size = 200;
+        let size = canvas.width < canvas.height ? canvas.width * 0.3 : canvas.height * 0.3;
         let sides = 5;
 
         // Max Level determines the dept of the fractal
