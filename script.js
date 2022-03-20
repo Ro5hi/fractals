@@ -5,7 +5,6 @@ window.addEventListener('load', function(){
     canvas.height = window.innerHeight;
 
     // Canvas Settings
-        ctx.fillStyle = 'darkslategrey';
         ctx.lineCap = 'round';
         ctx.shadowColor = 'rgba(0,0,0,0.9)';
         ctx.shaddowOffsetX = 10;
@@ -28,13 +27,12 @@ window.addEventListener('load', function(){
             sides = e.target.value;
             updateSliders();
             drawFractal();
-        })
-
+        });
         
     // Effect Settings
         // Determines size of the canvas based on device used
         let size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
-        let lineWidth = 15;
+        let lineWidth = 10;
         
         // Randomizes color of the fractal
         let color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
@@ -50,7 +48,6 @@ window.addEventListener('load', function(){
         const maxLevel = 3;
         // Branches determines number of branches created within the fractal
         const branches = 1;
-
 
     // Set Bezier Curve
         let pointX = 0;
@@ -143,7 +140,7 @@ window.addEventListener('load', function(){
         window.addEventListener('resize', function(){
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            size = canvas.width < canvas.height ? canvas.width * 0.04 : canvas.height * 0.04;
+            size = canvas.width < canvas.height ? canvas.width * 0.03 : canvas.height * 0.03;
             ctx.shadowColor = 'rgba(0,0,0,0.9)';
             ctx.shaddowOffsetX = 10;
             ctx.shaddowOffsetY = 5;

@@ -2,14 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: rgb(31, 31, 54);
+  }
+
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(15px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
   }
   
   #canvas1 {
-    background: rgb(31, 31, 54);
+    background: transparent;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 0px;
+    top: 0px;
     transform: translate(-50%, -50%);
+    animation: float 6s ease-in-out infinite;
   }
 
   #controls {
