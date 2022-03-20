@@ -34,12 +34,12 @@ window.addEventListener('load', function(){
     // Effect Settings
         // Determines size of the canvas based on device used
         let size = canvas.width < canvas.height ? canvas.width * 0.1 : canvas.height * 0.1;
-        let lineWidth = Math.floor(Math.random() * 20 + 10);
+        let lineWidth = 15;
         
         // Randomizes color of the fractal
         let color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
         // Scale Determines size of the segments
-        let scale = 1;
+        let scale = 0.85;
         
         // Determines nunber of parent branches
         let sides = 10;
@@ -47,9 +47,9 @@ window.addEventListener('load', function(){
         let spread = -0.2;
 
         // Max Level determines the dept of the fractal
-        const maxLevel = 3;
+        const maxLevel = 5;
         // Branches determines number of branches created within the fractal
-        const branches = 1;
+        const branches = 2;
 
     // Draw Branches
         function drawBranch(level){
@@ -98,11 +98,12 @@ window.addEventListener('load', function(){
     drawFractal();
 
     // Controls
+        // Randomize Settings
         function randomizeFractal() {
             lineWidth = Math.floor(Math.random() * 30 + 20);
             sides = Math.random() * 18 + 2;
             scale = Math.random() * 1 + 0.1;
-            spread = Math.random() * 0.6 + 0.3;
+            spread = Math.random() * 0.6 - 0.3;
             color = 'hsl('+ Math.random() * 360 + ', 100%, 50%)';
         }
         randomizeButton.addEventListener('click', function(){
@@ -111,6 +112,7 @@ window.addEventListener('load', function(){
             drawFractal();
         });
 
+        // Reset Settings
         function resetFractal() {
             lineWidth = 30;
             sides = 15;
