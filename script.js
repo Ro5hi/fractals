@@ -20,14 +20,21 @@ window.addEventListener('load', function(){
         ctx.rotate(0);
         ctx.fillRect(0,0,canvas.height, canvas.width);
 
-    for (let i = 0; i < sides; i++){
-        // Set Start Point to 0 and Draw Strokes 
-        ctx.beginPath();
-        ctx.moveTo(0,0);
-        ctx.lineTo(size,0);
-        ctx.stroke();
-        ctx.rotate((Math.PI * 2) / sides);
-    }
+    // Draw Branches
+        function drawBranch(){
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(size, 0);
+            ctx.stroke();
+
+            drawBranch();
+        }
+        drawBranch();
+
+    // for (let i = 0; i < sides; i++){
+    //     // Rotate Sides 
+    //     ctx.rotate((Math.PI * 2) / sides);
+    // }
 
     ctx.restore();
   })
