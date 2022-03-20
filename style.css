@@ -5,6 +5,20 @@
     background: rgb(31, 31, 54);
   }
 
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent; 
+    border-radius: 3px;
+  }
+
   @keyframes float {
     0% {
       transform: translatey(0px);
@@ -59,6 +73,7 @@
   }
 
   label, input {
+    background: transparent;
     opacity: 75%;
     padding: 5px;
     color: whitesmoke;

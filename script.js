@@ -6,9 +6,9 @@ window.addEventListener('load', function(){
 
     // Canvas Settings
         ctx.lineCap = 'round';
-        ctx.shadowColor = 'rgba(0,0,0,0.9)';
-        ctx.shaddowOffsetX = 10;
-        ctx.shaddowOffsetY = 5;
+        ctx.shadowColor = 'black';
+        ctx.shaddowOffsetX = 2;
+        ctx.shaddowOffsetY = 2;
         ctx.shadowBlur = 10;
 
     // Control Settings
@@ -140,10 +140,10 @@ window.addEventListener('load', function(){
         window.addEventListener('resize', function(){
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            size = canvas.width < canvas.height ? canvas.width * 0.03 : canvas.height * 0.03;
-            ctx.shadowColor = 'rgba(0,0,0,0.9)';
-            ctx.shaddowOffsetX = 10;
-            ctx.shaddowOffsetY = 5;
+            size = canvas.width < canvas.height ? canvas.width * 0.04 : canvas.height * 0.04;
+            ctx.shadowColor = 'black';
+            ctx.shaddowOffsetX = 2;
+            ctx.shaddowOffsetY = 2;
             ctx.shadowBlur = 10;
             
             drawFractal();
