@@ -18,11 +18,6 @@ window.addEventListener('load', function(){
         let scale = 0.5;
         let spread = 0.8;
         let branches = 2;
-        ctx.save();
-        ctx.translate(canvas.width/2,canvas.height/2);
-        ctx.scale(1,1);
-        ctx.rotate(0);
-        ctx.fillRect(0,0,canvas.height, canvas.width);
 
     // Draw Branches
         function drawBranch(level){
@@ -48,11 +43,21 @@ window.addEventListener('load', function(){
                 ctx.restore();                
             }
         }
-        drawBranch(0);
+        
+        // Draw Fractal   
+        function drawFractal() {
+            ctx.save();
+            ctx.translate(canvas.width/2,canvas.height/2);
+            ctx.scale(1,1);
+            ctx.rotate(0);
+            
+            for (let i = 0; i < sides; i++){ 
+                ctx.rotate((Math.PI * 2) / sides);
+                drawBranch(0);
+        }
+        ctx.restore();
+    }
+    drawFractal();
 
-    /* for (let i = 0; i < sides; i++){
-        // Rotate Sides 
-        ctx.rotate((Math.PI * 2) / sides);
-     } */
 
   })
