@@ -20,5 +20,5 @@ https://ro5hi.github.io/fractals/
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
