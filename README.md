@@ -1,6 +1,6 @@
 # Fractals
 
-A simple HTML/CSS/JavaScript web-application that renders randomized fractals based on number of branches and spread.
+A simple HTML/CSS/JavaScript web-application that renders randomized fractals based on number of branches and spread. Utilizes the Canvas API in HTML and math operators in JavaScript to create symmetrical angles. 
 
 ## Installation
 
@@ -12,7 +12,7 @@ Made for fun! You can tinker with the Effects Settings on the side and learn how
 
 ## Optimization
 
-My default Effects Settings are optimized to run on my computer. Depending on your computer specs, the fractals may take a couple of seconds to load. If you'd like to optimize the render time, adjust the maxLevels value. If you're still having trouble, I also recommend possibly lowering the branches or removing the shadows if you're having difficulty. The shadows adds depth of detail to your fractal renders.
+My default Effects Settings are optimized to run on my computer. Depending on your computer specs, the fractals may take a couple of seconds to load. In your local environment, if you'd like to optimize the render time then I do suggest adjusting the maxLevels value. If you're still having trouble, I also recommend possibly lowering the sides or adjusting the shadows if you're having difficulty loading your fractals.
 
 ## Demo
 
